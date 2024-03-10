@@ -8,6 +8,7 @@
 ;SELECT * FROM users WHERE email LIKE '%@gmail.com'
 ;UPDATE users SET fullname = 'test' WHERE id = (SELECT MIN(id) FROM users)
 ;SELECT status_id, COUNT(*) FROM tasks GROUP BY status_id
+;SELECT * FROM tasks WHERE description = '' OR description IS NULL
 ;SELECT * FROM tasks INNER JOIN users ON tasks.user_id = users.id WHERE users.email LIKE '%@gmail.com'
 ;SELECT * FROM users INNER JOIN tasks ON users.id = tasks.user_id WHERE tasks.status_id = (SELECT id FROM status WHERE name = 'in progress')
 ;SELECT * FROM users LEFT JOIN (SELECT user_id, COUNT(*) AS count FROM tasks GROUP BY user_id) tasks ON users.id = tasks.user_id
